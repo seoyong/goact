@@ -50,16 +50,17 @@ password | _User's password_
 
 No authentication headers are required.
 
-**Request**
+**Example Request**
 
 ```sh
-curl -i -H "Content-Type: application/json" -H "Authorization: Application 2312323423334:asdjl4ladfy3qXdef" -X POST -d '{"grant_type" : "password", "username":"xyz","password":"xyz"}' https://test.goact.co/mint/api/v1/authorize
+curl -i -H "Content-Type: application/json" -X POST -d '{"grant_type" : "password", "username":"xyz","password":"xyz"}' https://test.goact.co/mint/api/v1/authorize 
 ```
 
-**Response**
+**Example Response**
 
 ```javascript
 {
+    "response" : error code (000 is ok) and message(if 000 is , not provided) with date
     "user" : 7,
     "access_token" : "2YotnFZFEjr1zCsicMWpAA",
     "token_type" : "user",
@@ -69,6 +70,8 @@ curl -i -H "Content-Type: application/json" -H "Authorization: Application 23123
 
 Property | Meaning
 ------|--------
+code | error code , 000 is ok
+message | *Optional* Error Message if code is not 000
 user | Id of the associated user
 access_token | The access token to be used in Authorization header of the requests
 token_type | The token type, currently supported type is "user"
@@ -96,6 +99,12 @@ Get information about the access token used in the request.
 **Authentication**
 
 Request must be authenticated by User specific token.
+
+**Example Request**
+
+```sh
+$ curl -i -H "Content-Type: application/json" -H "Authorization: UserToken asdjl4ladfy3qXdef" -X GET https://test.goact.co/mint/api/v1/authorize/token_info
+```
 
 **Example Response**
 
