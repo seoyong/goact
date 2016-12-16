@@ -1,12 +1,12 @@
 # goACT webservice API documentation (Beta)
 
-[goAct](http://www.goact.co) is a blalalalal.
+[goAct](http://www.goact.co) is [description for goAct].
 
-When a goAct user signs into ....., data in the context of their mobile application or web service.
+When a goAct user signs into [description of Webservice].
 
 You can use the following assets:
 
-![goAct logo](images/goact_logo.png)
+![goAct logo](goact-api/images/goact_logo.png)
   
 ## [General](goact-api/1-General.md)
 
