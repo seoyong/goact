@@ -61,7 +61,7 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"grant_type" : "passwor
 ```javascript
 {
     "response" : {"code":"000","date":"Fri Dec 16 05:15:36 GMT 2016", "message" : "if code is not 000, will be provided"},
-    "user" : 7,
+    "user" : 1231,
     "access_token" : "2YotnFZFEjr1zCsicMWpAA",
     "token_type" : "user",
     "expires_in" : 3600
