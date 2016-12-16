@@ -50,6 +50,12 @@ password | _User's password_
 
 No authentication headers are required.
 
+**Request**
+
+```sh
+curl -i -H "Content-Type: application/json" -H Authorization: Application 2312323423334:asdjl4ladfy3qXdef" -X POST -d '{"grant_type" : "password", "username":"xyz","password":"xyz"}' https://test.goact.co/mint/api/v1/authorize
+```
+
 **Response**
 
 ```javascript
