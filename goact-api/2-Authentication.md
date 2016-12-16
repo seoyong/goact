@@ -69,9 +69,8 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"grant_type" : "passwor
 ```
 
 Property | Meaning
-------|--------
-code | error code , 000 is ok
-message | *Optional* Error Message if code is not 000
+------|-------- 
+response | Error Message 
 user | Id of the associated user
 access_token | The access token to be used in Authorization header of the requests
 token_type | The token type, currently supported type is "user"
