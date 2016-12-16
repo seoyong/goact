@@ -1,7 +1,7 @@
 # General
 
 The API is hosted in address test.goact.co, and all requests require HTTPS
-protocol, so each resource address starts with **https://test.goact.co**.
+protocol, so each resource address starts with **https://test.goact.co/mint/**.
 
 ## Conventions for responses
 
