@@ -38,9 +38,9 @@ This flow is used in a case where the end user has trusted her password with the
 client app. It conforms to OAuth2 specification section
 http://tools.ietf.org/html/rfc6749#section-4.3
 
-### POST /api/v1/auth/authorize
+### POST /mint/api/v1/auth/authorize
 
-x-www-form-urlencoded field | Value
+application/json field | Value
 ----------|------
 grant_type | password
 username | _User's username, typically the email address_
@@ -83,7 +83,7 @@ invalid_credentials | 400 | The password does not match, suggest reset?
 
 ## Checking access token information
 
-### GET /api/v1/auth/token_info
+### GET /mint/api/v1/auth/token_info
 
 Get information about the access token used in the request.
 
