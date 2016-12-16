@@ -103,7 +103,7 @@ Request must be authenticated by User specific token.
 **Example Request**
 
 ```sh
-$ curl -i -H "Content-Type: application/json" -H "Authorization: UserToken asdjl4ladfy3qXdef" -X GET https://test.goact.co/mint/api/v1/authorize/token_info
+curl -i -H "Content-Type: application/json" -H "Authorization: UserToken asdjl4ladfy3qXdef" -X GET https://test.goact.co/mint/api/v1/authorize/token_info
 ```
 
 **Example Response**
