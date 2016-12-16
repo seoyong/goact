@@ -60,7 +60,7 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"grant_type" : "passwor
 
 ```javascript
 {
-    "response" : error code (000 is ok) and message(if 000 is , not provided) with date
+    "response" : {"code":"000","date":"Fri Dec 16 05:15:36 GMT 2016", "message" : "if code is not 000, will be provided"},
     "user" : 7,
     "access_token" : "2YotnFZFEjr1zCsicMWpAA",
     "token_type" : "user",
@@ -102,7 +102,7 @@ Request must be authenticated by User specific token.
 **Example Request**
 
 ```sh
-curl -i -H "Content-Type: application/json" -H "Authorization: UserToken asdjl4ladfy3qXdef" -X GET https://test.goact.co/mint/api/v1/authorize/token_info
+curl -i -H "Content-Type: application/json" -H "Authorization: UserToken 2YotnFZFEjr1zCsicMWpAA" -X GET https://test.goact.co/mint/api/v1/authorize/token_info
 ```
 
 **Example Response**
