@@ -53,7 +53,7 @@ No authentication headers are required.
 **Example Request**
 
 ```sh
-curl -i -H "Content-Type: application/json" -X POST -d '{"grant_type" : "password", "username":"xyz","password":"xyz"}' https://test.goact.co/mint/api/v1/authorize 
+curl -i -H "Content-Type: application/json" -X POST -d '{"grant_type" : "password", "username":"xyz","password":"xyz"}' https://test.goact.co/mint/api/v1/auth/authorize
 ```
 
 **Example Response**
@@ -102,7 +102,7 @@ Request must be authenticated by User specific token.
 **Example Request**
 
 ```sh
-curl -i -H "Content-Type: application/json" -H "Authorization: UserToken 2YotnFZFEjr1zCsicMWpAA" -X GET https://test.goact.co/mint/api/v1/authorize/token_info
+curl -i -H "Content-Type: application/json" -H "Authorization: UserToken 2YotnFZFEjr1zCsicMWpAA" -X GET https://test.goact.co/mint/api/v1/auth/token_info
 ```
 
 **Example Response**
