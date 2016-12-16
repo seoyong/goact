@@ -14,7 +14,7 @@ Documents the general conventions used throughout the API.
 
 ## [Authentication](goact-api/2-Authentication.md)
 
-All access to user data in Beddit is authenticated with access tokens. This
+All access to user data in goAct is authenticated with access tokens. This
 chapter describes how authentication works and how access token is obtained.
 
 ## Resources
