@@ -13,7 +13,7 @@ all requests.
 
 Backend supports two token types: application and user tokens.
 
-### Application tokens
+### 1.Application tokens
 
 Application authentication is used for requests that do not require user
 authentication, for example creating a new user. Token is provided in the
@@ -23,7 +23,7 @@ HTTP authorization header in following format:
 Authorization: Application <application id>:<application secret>
 ```
 
-### User tokens
+### 2.User tokens
 
 The user token is granted by backend to particular user using the flow described
 below. Token is provided in the authorization header in following format:
@@ -38,7 +38,7 @@ This flow is used in a case where the end user has trusted her password with the
 client app. It conforms to OAuth2 specification section
 http://tools.ietf.org/html/rfc6749#section-4.3
 
-### POST /mint/api/v1/auth/authorize
+### 1.POST /mint/api/v1/auth/authorize
 
 application/json field | Value
 ----------|------
@@ -83,7 +83,7 @@ invalid_credentials | 400 | The password does not match, suggest reset?
 
 ## Checking access token information
 
-### GET /mint/api/v1/auth/token_info
+### 1.GET /mint/api/v1/auth/token_info
 
 Get information about the access token used in the request.
 
