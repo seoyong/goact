@@ -43,7 +43,7 @@ username | User's email address. **Must not be null**
 firstname | User's firstname.
 lastname | User's lastname.
 date_of_birth | *Optional* User's date of birth.
-sex | *Optional* Biological sex. Choises are "male", "female", and null.
+sex | *Optional* Biological sex. Choises are "M", "F", and null.
 weight | *Optional* Weight in kilograms
 height | *Optional* Height in centimeters 
 created | Timestamp of user creation
