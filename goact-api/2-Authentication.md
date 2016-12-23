@@ -26,10 +26,13 @@ Authorization: Application <application id>:<application secret>
 ### 2. User tokens
 
 The user token is granted by backend to particular user using the flow described
-below. Token is provided in the authorization header in following format:
+below. Token is provided in the request uri in following format:
 
-```
-Authorization: UserToken <user token>
+``` 
+/mint/api/v1/auth/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
+/mint/api/v1/user/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
+/mint/api/v1/sleep/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
+/mint/api/v1/sleep/summary/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
 ```
 
 ## User authentication: Mobile flow
@@ -53,7 +56,7 @@ No authentication headers are required.
 **Example Request**
 
 ```sh
-curl -i -H "Content-Type: application/json" -X POST -d '{"grant_type" : "password", "username":"kc@goact.com.au","password":"xyz"}' https://test.goact.co/mint/api/v1/auth/authorize
+curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X POST -d '{"grant_type" : "password", "username":"kc@goact.com.au","password":"xyz"}' https://test.goact.co/mint/api/v1/auth/authorize
 ```
 
 **Example Response**
@@ -90,7 +93,7 @@ Error identifier | HTTP Status | Description
 
 ## Checking access token information
 
-### 1. GET /mint/api/v1/auth/token_info
+### 1. GET /mint/api/v1/auth/:access_token
 
 Get information about the access token used in the request.
 
@@ -101,7 +104,7 @@ Request must be authenticated by User specific token.
 **Example Request**
 
 ```sh
-curl -i -H "Content-Type: application/json" -H "Authorization: UserToken 2YotnFZFEjr1zCsicMWpAA" -X GET https://test.goact.co/mint/api/v1/auth/token_info
+curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X GET https://test.goact.co/mint/api/v1/auth/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
 ```
 
 **Example Response**

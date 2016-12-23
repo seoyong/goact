@@ -1,12 +1,12 @@
 # User account related resources
  
-## GET /mint/api/v1/user/:user_id
+## GET /mint/api/v1/user/:access_token
 
 Return the current user profile data.
 
 ### Authentication
 
-Request must be authenticated by User specific token.
+Request must be authenticated by Application specific token.
 
 ### Example Request
 
@@ -18,8 +18,9 @@ curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 
 ```javascript
 {
   "id" : 123,
-  "email" : "example@email.com",
-  "name" : "Mikko W",
+  "username" : "kc@goact.com.au",
+  "firstname" : "Kate",
+  "lastname" : "Smith",
   "date_of_birth" : "1981-03-05",
   "sex" : "male",
   "weight" : 65.5,
@@ -38,7 +39,7 @@ Fields that belong to the user account
 Field | Description
 ---------|--------
 id | Unique and permanent user id.
-email | User's email address. **Must not be null**
+username | User's email address. **Must not be null**
 firstname | User's firstname.
 lastname | User's lastname.
 date_of_birth | User's date of birth.
@@ -49,9 +50,13 @@ created | Timestamp of user creation
 updated | Timestamp of user profile update
 
 
-## PUT /mint/api/v1/user/:user_id
+## PUT /mint/api/v1/user/:access_token
 
 Update all or some of the fields in user profile.
+
+### Authentication
+
+Request must be authenticated by Application specific token.
 
 
 ### Fields
@@ -71,7 +76,7 @@ height | *Optional* Height in centimeters
 ### Request
 
 The data to update is sent in request body in JSON format, as in the GET
-request. Id, created, and updated fields are ignored, if present.
+request. id, username, created, and updated fields are ignored, if present.
 
 Fields can be removed (cleared) by setting a field value to null in the request.
 
