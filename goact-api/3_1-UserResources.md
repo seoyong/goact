@@ -42,10 +42,10 @@ id | Unique and permanent user id.
 username | User's email address. **Must not be null**
 firstname | User's firstname.
 lastname | User's lastname.
-date_of_birth | User's date of birth.
-sex | Biological sex. Choises are "male", "female", and null.
-weight | Weight in kilograms
-height | Height in centimeters 
+date_of_birth | *Optional* User's date of birth.
+sex | *Optional* Biological sex. Choises are "male", "female", and null.
+weight | *Optional* Weight in kilograms
+height | *Optional* Height in centimeters 
 created | Timestamp of user creation
 updated | Timestamp of user profile update
 
