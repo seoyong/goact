@@ -9,32 +9,6 @@ You must never store  goAct user's username or password in your application.
 Instead, you exchange them to the access token, which is used to authenticate
 all requests.
 
-## Token types
-
-Backend supports two token types: application and user tokens.
-
-### 1. Application tokens
-
-Application authentication is used for requests that do not require user
-authentication, for example creating a new user. Token is provided in the
-HTTP authorization header in following format:
-
-```
-Authorization: Application <application id>:<application secret>
-```
-
-### 2. User tokens
-
-The user token is granted by backend to particular user using the flow described
-below. Token is provided in the request uri in following format:
-
-``` 
-/mint/api/v1/auth/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
-/mint/api/v1/user/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
-/mint/api/v1/sleep/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
-/mint/api/v1/sleep/summary/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
-```
-
 ## User authentication: Mobile flow
 
 This flow is used in a case where the end user has trusted her password with the

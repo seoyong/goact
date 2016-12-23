@@ -34,3 +34,31 @@ not_found               | 404 | The requested resource was not found on server
 bad_request             | 400 | The request contained invalid data (a more detailed error description may be included).
 forbidden               | 403 | The given authorization credentials were not valid for this resource. The request did not contain (correct) authorization credentials.
 unsupported_api_version | 410 | The version of API is no longer supported. You need you notify user to upgrade the client app.
+
+
+## Token types
+
+Backend supports two token types: application and user tokens.
+
+### 1. Application tokens
+
+Application authentication is used for requests that do not require user
+authentication, for example creating a new user. Token is provided in the
+HTTP authorization header in following format:
+
+```
+Authorization: Application <application id>:<application secret>
+```
+
+### 2. User tokens
+
+The user token is granted by backend to particular user using the flow described
+below. Token is provided in the request uri in following format:
+
+``` 
+/mint/api/v1/auth/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
+/mint/api/v1/user/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
+/mint/api/v1/sleep/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
+/mint/api/v1/sleep/summary/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
+```
+
