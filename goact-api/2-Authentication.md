@@ -53,14 +53,13 @@ No authentication headers are required.
 **Example Request**
 
 ```sh
-curl -i -H "Content-Type: application/json" -X POST -d '{"grant_type" : "password", "username":"xyz","password":"xyz"}' https://test.goact.co/mint/api/v1/auth/authorize
+curl -i -H "Content-Type: application/json" -X POST -d '{"grant_type" : "password", "username":"kc@goact.com.au","password":"xyz"}' https://test.goact.co/mint/api/v1/auth/authorize
 ```
 
 **Example Response**
 
 ```javascript
-{
-    "response" : {"code":"000","date":"Fri Dec 16 05:15:36 GMT 2016", "message" : "if code is not 000, will be provided"},
+{ 
     "user" : 1231,
     "access_token" : "2YotnFZFEjr1zCsicMWpAA",
     "token_type" : "user",
@@ -85,7 +84,8 @@ authenticate again.
 
 Error identifier | HTTP Status | Description
 -----------------|-------------|------------
-invalid_credentials | 400 | The password does not match, suggest reset?
+400 | 400 | The requested resource was not found on server 
+400 | 404 | The password does not match, suggest reset? 
 
  
 
@@ -115,3 +115,79 @@ curl -i -H "Content-Type: application/json" -H "Authorization: UserToken 2YotnFZ
 ```
 
 Please see previous section for explanations of the access token properties.
+
+ 
+**Errors**
+
+Error identifier | HTTP Status | Description
+-----------------|-------------|------------
+400 | 400 | The requested resource was not found on server  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## User registration: Mobile flow
+
+This flow is used in a case when the end user sign up with the client app. 
+
+### 1. POST /mint/api/v1/auth/register
+
+application/json field | Value
+----------|------
+grant_type | signup
+firstname | _User's first name_
+lastname | _User's last name_
+username | _User's username, typically the email address_
+password | _User's password, passwords length should be more than 5 characters_
+
+**Authentication**
+
+Request must be authenticated by Application specific token.
+
+**Example Request**
+
+```sh
+curl -i -H "Content-Type: application/json" -X POST -d '{"grant_type" : "signup", "firstname":"Kate", "lastname":"Smith", "username":"kc@goact.com.au","password":"xyz"}' https://test.goact.co/mint/api/v1/auth/authorize
+```
+
+**Example Response**
+
+```javascript
+{ 
+    "user" : 1231,
+    "access_token" : "2YotnFZFEjr1zCsicMWpAA",
+    "token_type" : "user",
+    "expires_in" : 3600
+}
+```
+
+Property | Meaning
+------|-------- 
+response | Error Message 
+user | Id of the associated user
+access_token | The access token to be used in Authorization header of the requests
+token_type | The token type, currently supported type is "user"
+expires_in | *Optional* In how many seconds the token expires. If missing, the token is not set to expire.
+
+If the username has already existed, HTTP 403 error is
+returned. In this case, the client application should ask the user to
+sign-up with different username again or log in with same username.
+
+
+**Errors**
+
+Error identifier | HTTP Status | Description
+-----------------|-------------|------------
+403 | 403 | The username has already existed
+
+ 
