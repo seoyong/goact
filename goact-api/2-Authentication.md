@@ -68,8 +68,7 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"grant_type" : "passwor
 ```
 
 Property | Meaning
-------|-------- 
-response | Error Message 
+------|--------  
 user | Id of the associated user
 access_token | The access token to be used in Authorization header of the requests
 token_type | The token type, currently supported type is "user"
@@ -157,7 +156,7 @@ Request must be authenticated by Application specific token.
 **Example Request**
 
 ```sh
-curl -i -H "Content-Type: application/json" -X POST -d '{"grant_type" : "signup", "firstname":"Kate", "lastname":"Smith", "username":"kc@goact.com.au","password":"xyz"}' https://test.goact.co/mint/api/v1/auth/authorize
+curl -i -H "Content-Type: application/json" -H "Authorization: Application 1YotnFZsEjr1zCsicMWpAAFSa" -X POST -d '{"grant_type" : "signup", "firstname":"Kate", "lastname":"Smith", "username":"kc@goact.com.au","password":"xyz"}' https://test.goact.co/mint/api/v1/auth/register
 ```
 
 **Example Response**
@@ -172,8 +171,7 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"grant_type" : "signup"
 ```
 
 Property | Meaning
-------|-------- 
-response | Error Message 
+------|--------  
 user | Id of the associated user
 access_token | The access token to be used in Authorization header of the requests
 token_type | The token type, currently supported type is "user"
