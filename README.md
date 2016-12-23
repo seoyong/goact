@@ -19,9 +19,9 @@ chapter describes how authentication works and how access token is obtained.
 
 ## Resources
 
-### [User account related resources] 
+### [User account related resources] (goact-api/3_1-UserResources.md)
 
-This chapter will describes the resources for retrieving user data.
+This chapter describes the resources for retrieving user data.
 
 ### [Other data resources]
 
