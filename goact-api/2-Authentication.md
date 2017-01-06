@@ -125,6 +125,7 @@ firstname | _User's first name_
 lastname | _User's last name_
 username | _User's username, typically the email address_
 password | _User's password, passwords length should be more than 5 characters_
+deviceid | _Device id for receiving notification Firebase notification(FCM)_
 
 **Authentication**
 
@@ -133,7 +134,7 @@ Request must be authenticated by Application specific token.
 **Example Request**
 
 ```sh
-curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X POST -d '{"grant_type" : "signup", "firstname":"Kate", "lastname":"Smith", "username":"kc@goact.com.au","password":"xyz"}' https://test.goact.co/mint/api/v1/auth/register
+curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X POST -d '{"grant_type" : "signup", "firstname":"Kate", "lastname":"Smith", "username":"kc@goact.com.au","password":"xyz", "deviceid" : "bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P"}' https://test.goact.co/mint/api/v1/auth/register
 ```
 
 **Example Response**

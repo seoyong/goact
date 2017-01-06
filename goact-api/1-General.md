@@ -34,6 +34,7 @@ not_found               | 404 | The requested resource was not found on server
 bad_request             | 400 | The request contained invalid data (a more detailed error description may be included).
 forbidden               | 403 | The given authorization credentials were not valid for this resource. The request did not contain (correct) authorization credentials.
 unsupported_api_version | 410 | The version of API is no longer supported. You need you notify user to upgrade the client app.
+server internal error   | 500 | The server encountered an internal error or misconfiguration and was unable to complete your request.
 
 
 ## Token types
