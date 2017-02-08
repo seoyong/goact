@@ -40,6 +40,7 @@ curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 
     "user" : 1231,
     "access_token" : "2YotnFZFEjr1zCsicMWpAA",
     "token_type" : "user",
+    "redirect_after_login" : "https://test.goact.co/mint/healthTracking.seam",
     "expires_in" : 3600
 }
 ```
@@ -49,6 +50,7 @@ Property | Meaning
 user | Id of the associated user
 access_token | The access token to be used in Authorization header of the requests
 token_type | The token type, currently supported type is "user"
+redirect_after_login | *Optional* If not missing, the native app should redirect to the url.
 expires_in | *Optional* In how many seconds the token expires. If missing, the token is not set to expire.
 
 If the token is already expired, or otherwise cancelled, HTTP 403 error is
