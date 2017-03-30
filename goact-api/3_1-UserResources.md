@@ -67,10 +67,11 @@ Field | Description
 ---------|-------- 
 firstname | *Optional* User's firstname.
 lastname | *Optional* User's lastname.
-date_of_birth | *Optional* User's date of birth.
+date_of_birth | *Optional* User's date of birth(YYYY-MM-DD).
 sex | *Optional* Biological sex. Choises are "male", "female", and null.
 weight | *Optional* Weight in kilograms
 height | *Optional* Height in centimeters  
+password | *Optional* new password to change. Minimum length is 6. The native app should confirmed that new password is correct by double checking.     
 deviceid | *Optional* Device id for native app to send notification   
 
  
@@ -82,7 +83,7 @@ request. id, username, created, and updated fields are ignored, if present.
 Fields can be removed (cleared) by setting a field value to null in the request.
 
 ```sh
-curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X PUT -d '{"firstname":"Kate", "lastname":"Smith", "date_of_birth":"1981-03-05","sex":"male", "weight" : 65.5, "height" : 169.0, "deviceid" : "bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P" }' https://test.goact.co/mint/api/v1/user/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
+curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X PUT -d '{"firstname":"Kate", "lastname":"Smith", "date_of_birth":"1981-03-05","sex":"male", "weight" : 65.5, "height" : 169.0, "password": "newpaswd!23", "deviceid" : "bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P" }' https://test.goact.co/mint/api/v1/user/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
 ```
 
 ### Response
