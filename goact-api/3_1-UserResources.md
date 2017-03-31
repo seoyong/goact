@@ -16,8 +16,7 @@ curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 
 ### Example Response
 
 ```javascript
-{
-  "id" : 123,
+{ 
   "username" : "kc@goact.com.au",
   "firstname" : "Kate",
   "lastname" : "Smith",
@@ -61,7 +60,7 @@ Request must be authenticated by Application specific token.
 
 ### Fields
 
-Fields that can update to the user account
+Fields that can update to the user account.
 
 Field | Description
 ---------|-------- 
@@ -87,6 +86,8 @@ curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 
 ```
 
 ### Response
+
+Fields that requested will be returned with.
 
 Returns the updated user profile, see GET request.
 

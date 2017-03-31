@@ -128,11 +128,7 @@ firstname | _User's first name_
 lastname | _User's last name_
 username | _User's username, typically the email address_
 password | _User's password, passwords length should be more than 5 characters_
-deviceid | _Device id for receiving notification Firebase notification(FCM)_
-
-**Authentication**
-
-Request must be authenticated by Application specific token.
+deviceid | _Device id for receiving notification Firebase notification(FCM)_ 
 
 **Example Request**
 
@@ -171,4 +167,62 @@ Error identifier | HTTP Status | Description
 -----------------|-------------|------------
 403 | 403 | The username has already existed
 
- 
+
+
+
+
+
+
+
+
+## User request new password: Mobile flow
+
+This flow is used in a case when the end user request new password in the client app. 
+
+### 1. POST /mint/api/v1/auth/request_new_password
+
+application/json field | Value
+----------|------
+grant_type | reset 
+username | _User's username, typically the email address_ 
+
+**Validation**
+
+Must be validated for 'grant_type' and 'username' before requesting it.
+
+**Example Request**
+
+```sh
+curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X POST -d '{"grant_type" : "reset", "username":"aaa9@goact.com.au"}' https://test.goact.co/mint/api/v1/auth/request_new_password
+```
+
+**Example Response**
+
+```javascript
+{ 
+    "user" : 1231,
+    "access_token" : "2YotnFZFEjr1zCsicMWpAA",
+    "token_type" : "user", 
+    "expires_in" : 3600
+}
+```
+
+Property | Meaning
+------|--------  
+user | Id of the associated user
+access_token | The access token to be used in Authorization header of the requests
+token_type | The token type, currently supported type is "user" 
+expires_in | *Optional* In how many seconds the token expires. If missing, the token is not set to expire.
+
+If the username hasn't existed, HTTP 400 error is
+returned. In this case, the client application should ask the user to enter correct username again.
+
+
+**Errors**
+
+Error identifier | HTTP Status | Description
+-----------------|-------------|------------
+400 | 400 | The requested resource was not found on server  
+
+
+  
