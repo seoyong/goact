@@ -62,8 +62,8 @@ authenticate again.
 
 Error identifier | HTTP Status | Description
 -----------------|-------------|------------
-400 | 400 | The requested resource was not found on server 
-400 | 404 | The password does not match, suggest reset? 
+404 | 404 | The requested resource was not found on server 
+404 | 404 | The password does not match, suggest reset? 
 
  
 
@@ -100,7 +100,7 @@ Please see previous section for explanations of the access token properties.
 
 Error identifier | HTTP Status | Description
 -----------------|-------------|------------
-400 | 400 | The requested resource was not found on server  
+404 | 404 | The requested resource was not found on server  
 
 
 
@@ -222,7 +222,7 @@ returned. In this case, the client application should ask the user to enter corr
 
 Error identifier | HTTP Status | Description
 -----------------|-------------|------------
-400 | 400 | The requested resource was not found on server  
+404 | 404 | The requested resource was not found on server  
 
 
   
