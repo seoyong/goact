@@ -72,6 +72,9 @@ weight | *Optional* Weight in kilograms
 height | *Optional* Height in centimeters  
 password | *Optional* new password to change. Minimum length is 6. The native app should confirmed that new password is correct by double checking.     
 deviceid | *Optional* Device id for native app to send notification   
+FCMPushToken | *Optional* FCM Push Token  
+APNSPushToken | *Optional* APNS Push Token   
+pushPermissionGranted | *Optional* Push Permission Granted   
 
  
 ### Request
