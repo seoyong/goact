@@ -1,6 +1,6 @@
 # User account related resources
  
-## GET /mint/api/v1/user/:access_token
+## 1. GET /mint/api/v1/user/:access_token
 
 Return the current user profile data.
 
@@ -49,7 +49,7 @@ created | Timestamp of user creation
 updated | Timestamp of user profile update
 
 
-## PUT /mint/api/v1/user/:access_token
+## 2. PUT /mint/api/v1/user/:access_token
 
 Update all or some of the fields in user profile.
 
@@ -98,7 +98,7 @@ Returns the updated user profile, see GET request.
 
 
 
-## POST /mint/api/v1/user/humanapi/:access_token
+## 3. POST /mint/api/v1/user/humanapi/:access_token
 
 Update Humanapi api fields to access and fetch Health device data from Humanapi.
 This api must be call whenever user add new device.
