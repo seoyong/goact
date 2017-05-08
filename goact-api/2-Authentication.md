@@ -69,7 +69,7 @@ Error identifier | HTTP Status | Description
 
 ## Checking access token information
 
-### 1. GET /mint/api/v1/auth/:access_token
+### 2. GET /mint/api/v1/auth/:access_token
 
 Get information about the access token used in the request.
 
@@ -115,7 +115,7 @@ Error identifier | HTTP Status | Description
 
 
 
-## User registration: Mobile flow
+## 3. User registration: Mobile flow
 
 This flow is used in a case when the end user sign up with the client app. 
 
@@ -175,7 +175,7 @@ Error identifier | HTTP Status | Description
 
 
 
-## User request new password: Mobile flow
+## 4. User request new password: Mobile flow
 
 This flow is used in a case when the end user request new password in the client app. 
 

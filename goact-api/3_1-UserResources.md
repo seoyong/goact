@@ -110,14 +110,16 @@ Request must be authenticated by Application specific token.
 ### Example Request
 
 ```sh
-curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X POST -d '{"humanId":"51b946bac50f459051f85713d716cb07", "accessToken":"LWtZp5evX5KcEvvi_xvdISRkLgY=bw7s2IdY42fb85ea06c98a63d44c7a41fea208a8540a661f8ad9328c7915527c8c9d402234d1bb5c76efd98c126d098f16adf1aa5004fb865245112d24f4e3f3ecdb3d6874efba9c1e9954ceb2eaf85f531f624505cbdd0667e7af463a82de224004bb6475a6fa13a4b6308e702f592d5a6b104e", "publicToken" : "9fa02df6631b81bf3f2405a642592b8b" }'  https://test.goact.co/mint/api/v1/user/humanapi/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
+curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 1YotnFZsEjr1zCsicMWpAAFSa" -X POST -d '{"accessType" : "update", "humanId":"51b946bac50f459051f85713d716cb07", "accessToken":"LWtZp5evX5KcEvvi_xvdISRkLgY=bw7s2IdY42fb85ea06c98a63d44c7a41fea208a8540a661f8ad9328c7915527c8c9d402234d1bb5c76efd98c126d098f16adf1aa5004fb865245112d24f4e3f3ecdb3d6874efba9c1e9954ceb2eaf85f531f624505cbdd0667e7af463a82de224004bb6475a6fa13a4b6308e702f592d5a6b104e", "publicToken" : "9fa02df6631b81bf3f2405a642592b8b" }'  https://test.goact.co/mint/api/v1/user/humanapi/dbd4bc88-7f44-4cd7-b9f6-06db922e36c2
 ```
 ### Example Response
 
 ```javascript
 { 
   "user" : 1231,
-  "humanId" : "51b946bac50f459051f85713d716cb07"
+  "humanId" : "51b946bac50f459051f85713d716cb07",
+  "accessToken":"LWtZp5evX5KcEvvi_xvdISRkLgY=bw7s2IdY42fb85ea06c98a63d44c7a41fea208a8540a661f8ad9328c7915527c8c9d402234d1bb5c76efd98c126d098f16adf1aa5004fb865245112d24f4e3f3ecdb3d6874efba9c1e9954ceb2eaf85f531f624505cbdd0667e7af463a82de224004bb6475a6fa13a4b6308e702f592d5a6b104e", 
+  "publicToken" : "9fa02df6631b81bf3f2405a642592b8b"
 }
 ```
 
@@ -129,9 +131,20 @@ Fields that belong to the user account
 
 Field | Description
 ---------|-------- 
-humanId     | Unique and Humanapi user id for this user.
-publicToken | Humanapi public token for this user. **Must not be null**
-accessToken | Humanapi access token for this user. **Must not be null** 
+accessType  | 'get' or 'update' **Must not be null**.
+user        | It should be matched with 'client_user_id' when communicate with Humanapi. This field also returns in sign in api('/mint/api/v1/auth/authorize').
+humanId     | Unique and Humanapi user id for this user. **Must not be null** if accessType is 'update'.
+publicToken | Humanapi public token for this user. **Must not be null** if accessType is 'update'.
+accessToken | Humanapi access token for this user. **Must not be null** if accessType is 'update'.
 
 
- 
+### Rule for client_user_id 
+When communicating with Hunman api, they will ask 'client_user_id'.
+Since we have several server instance we need to identify each user by adding web domain.
+To do this we should provide it as 'sahmri.goact.co-' + user. eg, sahmri.goact.co-1157. 
+
+
+
+
+
+
