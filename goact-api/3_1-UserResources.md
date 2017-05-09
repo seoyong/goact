@@ -119,7 +119,7 @@ curl -i -H "Content-Type: application/json" -H "Authorization: ApplicationToken 
   "user" : 1231,
   "humanId" : "51b946bac50f459051f85713d716cb07",
   "accessToken":"LWtZp5evX5KcEvvi_xvdISRkLgY=bw7s2IdY42fb85ea06c98a63d44c7a41fea208a8540a661f8ad9328c7915527c8c9d402234d1bb5c76efd98c126d098f16adf1aa5004fb865245112d24f4e3f3ecdb3d6874efba9c1e9954ceb2eaf85f531f624505cbdd0667e7af463a82de224004bb6475a6fa13a4b6308e702f592d5a6b104e", 
-  "publicToken" : "9fa02df6631b81bf3f2405a642592b8b"
+  "publicToken" : "9fa02df6631b81bf3f2405a642592b8b"an
 }
 ```
 
@@ -139,7 +139,7 @@ Fields that belong to the user account
 
 Field | Description
 ---------|-------- 
-accessType  | 'get' or 'update' **Must not be null**.
+accessType  | 'get' or 'update' **Must not be null**. get - fetching user Humanapi info. update - add or update humanapi info.
 user        | It should be matched with 'client_user_id' when communicate with Humanapi. This field also returns in sign in api('/mint/api/v1/auth/authorize').
 humanId     | Unique and Humanapi user id for this user. **Must not be null** if accessType is 'update'.
 publicToken | Humanapi public token for this user. **Must not be null** if accessType is 'update'.
