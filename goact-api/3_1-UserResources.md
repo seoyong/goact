@@ -139,9 +139,10 @@ Fields that belong to the user account
 
 Field | Description
 ---------|-------- 
-accessType  | 'get' or 'update' **Must not be null**. get - fetching user Humanapi info. update - add or update humanapi info.
+accessType  | 'get', 'add' or 'update'. **Must not be null**. get - fetching user Humanapi info. add - adding human api , update - update humanapi info.
 user        | It should be matched with 'client_user_id' when communicate with Humanapi. This field also returns in sign in api('/mint/api/v1/auth/authorize').
-humanId     | Unique and Humanapi user id for this user. **Must not be null** if accessType is 'update'.
+humanId     | Unique and Humanapi user id for this user. **Must not be null** if accessType is 'add' or 'update'.
+sessionToken | Humanapi session token for this user . **Must not be null** if accessType is 'add'.
 publicToken | Humanapi public token for this user. **Must not be null** if accessType is 'update'.
 accessToken | Humanapi access token for this user. **Must not be null** if accessType is 'update'.
 
